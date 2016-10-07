@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+ <html>
+<meta charset="utf-8">
+ <style type="text/css">
+ </style>
+ <head>
+ <script type="text/javascript" >
+ peoplenum=0;
+ function plus() {
+   peoplenum=peoplenum+1;
+   document.getElementById("spn").innerHTML = peoplenum;
+ }
+ function minus() {
+   peoplenum=peoplenum-1;
+   document.getElementById("spn").innerHTML = peoplenum;
+ }
+ 
+   var cnt = 100;
+function rannum(){
+ cnt--;
+ var result = Math.floor(Math.random()*peoplenum+1);    
+ document.getElementById("rdn").innerHTML = result;
+ 
+ if(cnt != 0){
+ setTimeout("rannum()",20);
+ }else{ cnt = 100;}
+}
+ </script>
+ </head>
+ <body>
+ <h1>제비뽑기</h1>
+ <a>인원수를 선택하세요</a>
+ <input type="button" value=+ onclick="plus()">
+<span id="spn">0</span>
+ <input type="button" value=- onclick="minus()">
+<input type="button" value="확인" onclick="rannum()">
+<br>
+<span>당첨번호 : </span><span id="rdn" style=""></span>
+ </body>
+ </html>
